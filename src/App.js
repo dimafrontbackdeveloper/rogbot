@@ -12,7 +12,6 @@ import { useState } from 'react'
 import Carousel, { consts } from 'react-elastic-carousel'
 
 import './assets/scss/style.scss'
-// import { ConnectAndMintAndDisconect } from './components/ConnectAndMintAndDisconect';
 
 function FaqRow({ id, textTop, textBottom, openFaq, activeFaq }) {
 	return (
@@ -102,8 +101,6 @@ function App() {
 
 	return (
 		<div className='wrapper'>
-			{/* <ConnectAndMintAndDisconect /> */}
-
 			<div className={`burger-menu ${isActiveBurger && 'burger-menu--active'}`}>
 				<div className='close' onClick={() => setIsActiveBurger(false)}>
 					<div></div>
@@ -122,11 +119,7 @@ function App() {
 							const selectWalletFunctional = document.querySelector(
 								'.button-select-wallet'
 							)
-							// dispatch({
-							// 	type: 'SET_WALLET',
-							// 	payload: null,
-							// })
-							localStorage.setItem('isNeedMint', false)
+							ge.setItem('isNeedMint', false)
 							selectWalletFunctional.click()
 						} else {
 							const disconnectFunctional = document.querySelector(
@@ -134,11 +127,6 @@ function App() {
 							)
 							localStorage.setItem('isNeedMint', false)
 							disconnectFunctional.click()
-
-							// dispatch({
-							// 	type: 'SET_WALLET',
-							// 	payload: '',
-							// })
 						}
 					}}
 				>
@@ -196,10 +184,7 @@ function App() {
 										const selectWalletFunctional = document.querySelector(
 											'.button-select-wallet'
 										)
-										// dispatch({
-										// 	type: 'SET_WALLET',
-										// 	payload: null,
-										// })
+
 										localStorage.setItem('isNeedMint', false)
 										selectWalletFunctional.click()
 									} else {
@@ -208,11 +193,6 @@ function App() {
 										)
 										localStorage.setItem('isNeedMint', false)
 										disconnectFunctional.click()
-
-										// dispatch({
-										// 	type: 'SET_WALLET',
-										// 	payload: '',
-										// })
 									}
 								}}
 							>
@@ -263,10 +243,7 @@ function App() {
 										const selectWalletFunctional = document.querySelector(
 											'.button-select-wallet'
 										)
-										// dispatch({
-										// 	type: 'SET_WALLET',
-										// 	payload: null,
-										// })
+
 										localStorage.setItem('isNeedMint', false)
 										selectWalletFunctional.click()
 										localStorage.setItem('isNeedMint', true)
