@@ -8,7 +8,8 @@ import robotMini1 from './assets/images/robot-mini1.png'
 import robotZoom1 from './assets/images/robot-zoom1.png'
 import robot2 from './assets/images/robot2.jpg'
 
-import { useState } from 'react'
+import AOS from 'aos'
+import { useEffect, useState } from 'react'
 import Carousel, { consts } from 'react-elastic-carousel'
 
 import './assets/scss/style.scss'
@@ -97,6 +98,10 @@ function App() {
 		)
 	}
 
+	useEffect(() => {
+		AOS.init()
+	}, [])
+
 	return (
 		<div className='wrapper'>
 			<div className={`burger-menu ${isActiveBurger && 'burger-menu--active'}`}>
@@ -144,12 +149,12 @@ function App() {
 			<header className='header'>
 				<div className='container'>
 					<div className='header__row d-f jc-sb ai-c'>
-						<h1 className='header__logo'>
+						<h1 className='header__logo' data-aos='fade-right'>
 							<a href='#'>
 								<img src={logo} alt='logo' />
 							</a>
 						</h1>
-						<div className='connect-wallet d-f ai-c'>
+						<div className='connect-wallet d-f ai-c' data-aos='fade-left'>
 							<svg
 								className='soc'
 								viewBox='0 0 18 16'
@@ -213,15 +218,17 @@ function App() {
 				<section className='intro'></section>
 				<section className='exploring-metaverse'>
 					<div className='container'>
-						<h2 className='title'>Never Stop Exploring In Metaverse</h2>
-						<p>
+						<h2 className='title' data-aos='fade-up'>
+							Never Stop Exploring In Metaverse
+						</h2>
+						<p data-aos='fade-up'>
 							The Rogbot Kingdom is an ethnic living in Rogue Planet, and has
 							been travelling in space. The nation has evolved from a group of
 							talents and scientists and transformed to half robot half
 							humanity. They keep learning about diverse cultures and technology
 							during the endless journey.
 						</p>
-						<p>
+						<p data-aos='fade-up'>
 							{' '}
 							The Rogbots are a Kingdom of 10000 citizens in NFTs strolling
 							through the Ethereum blockchain. Rogbots are unique in feature and
@@ -251,10 +258,13 @@ function App() {
 										mintFunctional.click()
 									}
 								}}
+								data-aos='fade-right'
 							>
 								Mint
 							</button>
-							<button className='button'>Opensea</button>
+							<button className='button' data-aos='fade-left'>
+								Opensea
+							</button>
 						</div>
 					</div>
 
@@ -323,9 +333,15 @@ function App() {
 
 				<section className='project section'>
 					<div className='container'>
-						<h2 className='title'>Project Information</h2>
+						<h2 className='title' data-aos='fade-up'>
+							Project Information
+						</h2>
 						<div className='project__row d-g gtc-2'>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-left'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>1</span>
 								</div>
@@ -336,7 +352,11 @@ function App() {
 									</p>
 								</div>
 							</div>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-right'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>4</span>
 								</div>
@@ -349,7 +369,11 @@ function App() {
 									</p>
 								</div>
 							</div>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-left'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>2</span>
 								</div>
@@ -360,7 +384,11 @@ function App() {
 									</p>
 								</div>
 							</div>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-right'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>5</span>
 								</div>
@@ -371,7 +399,11 @@ function App() {
 									</p>
 								</div>
 							</div>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-left'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>3</span>
 								</div>
@@ -382,7 +414,11 @@ function App() {
 									</p>
 								</div>
 							</div>
-							<div className='project__column'>
+							<div
+								className='project__column'
+								data-aos='flip-right'
+								data-aos-offset='100'
+							>
 								<div className='project__column-left'>
 									<span>6</span>
 								</div>
@@ -398,9 +434,11 @@ function App() {
 
 				<section className='parity'>
 					<div className='container'>
-						<h2 className='title'>Rarity</h2>
+						<h2 className='title' data-aos='fade-up'>
+							Rarity
+						</h2>
 						<div className='parity__row d-g gtc-2'>
-							<div className='parity__column'>
+							<div className='parity__column' data-aos='zoom-in'>
 								<div className='parity__column-img'>
 									<img src={robotZoom1} alt='robot' />
 								</div>
@@ -413,7 +451,7 @@ function App() {
 									it was a myth on the planet.
 								</p>
 							</div>
-							<div className='parity__column'>
+							<div className='parity__column' data-aos='zoom-in'>
 								<div className='parity__column-img'>
 									<img src={robotZoom1} alt='robot' />
 								</div>
@@ -426,7 +464,7 @@ function App() {
 									it was a myth on the planet.
 								</p>
 							</div>
-							<div className='parity__column'>
+							<div className='parity__column' data-aos='zoom-in'>
 								<div className='parity__column-img'>
 									<img src={robotZoom1} alt='robot' />
 								</div>
@@ -439,7 +477,7 @@ function App() {
 									it was a myth on the planet.
 								</p>
 							</div>
-							<div className='parity__column'>
+							<div className='parity__column' data-aos='zoom-in'>
 								<div className='parity__column-img'>
 									<img src={robotZoom1} alt='robot' />
 								</div>
@@ -458,9 +496,14 @@ function App() {
 
 				<section className='roadmap section'>
 					<div className='container'>
-						<h2 className='title'>Roadmap</h2>
+						<h2 className='title' data-aos='zoom-in'>
+							Roadmap
+						</h2>
 						<div className='roadmap__row'>
-							<div className='roadmap__column roadmap__column--text-to-right'>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									Create a verified The Rogbot Kingdom channel. A discord and
@@ -472,13 +515,22 @@ function App() {
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'></div>
-							<div className='roadmap__column roadmap__column--text-to-right'></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							></div>
 							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									We all stand for Ukraine and hope that we're able to help. We
@@ -493,7 +545,10 @@ function App() {
 									<a href='#'>View on Opensea</a>
 								</p>
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-right'>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							>
 								<h3>Discover Pioneers In Space</h3>
 								<p>
 									An adventure spaceship was sent to space and the first 555
@@ -514,13 +569,22 @@ function App() {
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'></div>
-							<div className='roadmap__column roadmap__column--text-to-right'></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							></div>
 							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									Create a verified The Rogbot Kingdom channel. A discord and
@@ -528,33 +592,10 @@ function App() {
 									education, meet-ups, exclusive holder events etc.
 								</p>
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-right'>
-								<h3>Community Engagement</h3>
-								<p>
-									Create a verified The Rogbot Kingdom channel. A discord and
-									twitter channel dedicated to floor discussion, networking,
-									education, meet-ups, exclusive holder events etc.
-								</p>
-							</div>
-							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
-								<div className='circle'></div>
-								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
-							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'></div>
-							<div className='roadmap__column roadmap__column--text-to-right'></div>
-							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
-								<div className='circle'></div>
-								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
-							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'>
-								<h3>Community Engagement</h3>
-								<p>
-									Create a verified The Rogbot Kingdom channel. A discord and
-									twitter channel dedicated to floor discussion, networking,
-									education, meet-ups, exclusive holder events etc.
-								</p>
-							</div>
-							<div className='roadmap__column roadmap__column--text-to-right'>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									Create a verified The Rogbot Kingdom channel. A discord and
@@ -566,13 +607,22 @@ function App() {
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'></div>
-							<div className='roadmap__column roadmap__column--text-to-right'></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							></div>
 							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									Create a verified The Rogbot Kingdom channel. A discord and
@@ -580,7 +630,10 @@ function App() {
 									education, meet-ups, exclusive holder events etc.
 								</p>
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-right'>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							>
 								<h3>Community Engagement</h3>
 								<p>
 									Create a verified The Rogbot Kingdom channel. A discord and
@@ -592,7 +645,48 @@ function App() {
 								<div className='circle'></div>
 								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
 							</div>
-							<div className='roadmap__column roadmap__column--text-to-left'></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							></div>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							></div>
+							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
+								<div className='circle'></div>
+								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
+							</div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							>
+								<h3>Community Engagement</h3>
+								<p>
+									Create a verified The Rogbot Kingdom channel. A discord and
+									twitter channel dedicated to floor discussion, networking,
+									education, meet-ups, exclusive holder events etc.
+								</p>
+							</div>
+							<div
+								className='roadmap__column roadmap__column--text-to-right'
+								data-aos='fade-right'
+							>
+								<h3>Community Engagement</h3>
+								<p>
+									Create a verified The Rogbot Kingdom channel. A discord and
+									twitter channel dedicated to floor discussion, networking,
+									education, meet-ups, exclusive holder events etc.
+								</p>
+							</div>
+							<div className='roadmap__column roadmap__column--line d-f jc-c ai-c fd-c'>
+								<div className='circle'></div>
+								{/* <!-- <img src="./../assets/images/line.png" alt="line"> --> */}
+							</div>
+							<div
+								className='roadmap__column roadmap__column--text-to-left'
+								data-aos='fade-left'
+							></div>
 						</div>
 						<div className='box'>
 							<img src={box} alt='box' />
@@ -602,7 +696,9 @@ function App() {
 
 				<section className='team section'>
 					<div className='container'>
-						<h2 className='title'>Meet The Team</h2>
+						<h2 className='title' data-aos='fade-up'>
+							Meet The Team
+						</h2>
 						<h3>
 							Our team strongly believes in transparency and honesty, as well as
 							giving back to the community that has supported the project along
@@ -611,7 +707,7 @@ function App() {
 							discord for more info.
 						</h3>
 						<div className='team__row d-g gtc-4'>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-right'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -630,7 +726,7 @@ function App() {
 									</svg>
 								</div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-up'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -644,7 +740,7 @@ function App() {
 									</svg>
 								</div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-up'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -652,7 +748,7 @@ function App() {
 								<h5>Founder & Artist, Father of Rogbots</h5>
 								<div className='socials'></div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-left'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -671,7 +767,7 @@ function App() {
 									</svg>
 								</div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-right'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -685,7 +781,7 @@ function App() {
 									</svg>
 								</div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-up'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -693,7 +789,7 @@ function App() {
 								<h5>Founder & Artist, Father of Rogbots</h5>
 								<div className='socials'></div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-up'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
@@ -712,7 +808,7 @@ function App() {
 									</svg>
 								</div>
 							</div>
-							<div className='team__column'>
+							<div className='team__column' data-aos='fade-left'>
 								<div className='team__column-img'>
 									<img src={robotMini1} alt='team' />
 								</div>
