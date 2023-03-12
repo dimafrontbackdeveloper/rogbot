@@ -37,8 +37,6 @@ function FaqRow({ id, textTop, textBottom, openFaq, activeFaq }) {
 }
 
 function App() {
-	// const dispatch = useDispatch()
-
 	const [activeFaq, setActiveFaq] = useState(null)
 	const [isActiveBurger, setIsActiveBurger] = useState(false)
 	const [isMouseMove, setIsMouseMove] = useState(false)
