@@ -117,7 +117,7 @@ function App() {
 							const selectWalletFunctional = document.querySelector(
 								'.button-select-wallet'
 							)
-							ge.setItem('isNeedMint', false)
+							localStorage.setItem('isNeedMint', false)
 							selectWalletFunctional.click()
 						} else {
 							const disconnectFunctional = document.querySelector(
